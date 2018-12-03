@@ -2,7 +2,7 @@
  * @Author: jzh
  * @Date: 2018-12-03 09:01:22 
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2018-12-03 09:36:22
+ * @Last Modified time: 2018-12-03 09:44:36
  */
 var gulp = require('gulp');
 
@@ -47,4 +47,22 @@ gulp.task('browserSync', function() {
 //监听
 gulp.task('watch', function() {
     return gulp.watch('./src/scss/*.scss', gulp.series('devScss'));
+})
+
+//css
+gulp.task('bCss', function() {
+    return gulp.src('./src/css/*.css')
+        .pipe(gulp.dest('./build'));
+})
+
+//scss
+gulp.task('bScss', function() {
+    return gulp.src('./src/scss/*.scss')
+        .pipe(gulp.dest('./build'));
+})
+
+//js
+gulp.task('bJs', function() {
+    return gulp.src('./src/js/*.js')
+        .pipe(gulp.dest('./build'));
 })
